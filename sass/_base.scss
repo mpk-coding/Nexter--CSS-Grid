@@ -1,15 +1,83 @@
 // COLOR VARIABLES
 $color-primary: #c69963;
-$color-primary-dark: #B28451;
+$color-primary-dark: #b28451;
 
 $color-secondary: #101d2c;
 
 $color-grey-light-1: #f9f7f6;
 $color-grey-light-2: #aaa;
 
-$color-grey-dark-1: #54483A;
-$color-grey-dark-2: #6D5D4B;
+$color-grey-dark-1: #54483a;
+$color-grey-dark-2: #6d5d4b;
+
+$color-primary-me: #bf382b;
+$color-primary-dark-me: #8c2323;
+
+$color-secondary-me: #011826;
+
+$color-grey-light-1-me: #f2ead5;
+$color-grey-light-2-me: #e6ddc8;
+
+$color-grey-dark-1-me: #b6af9f;
+$color-grey-dark-2-me: #706c62;
 
 // FONT VARIABLES
-$font-primary: 'Nunito', sans-serif;
-$font-display: 'Josefin Sans', sans-serif;
+$font-primary: "Nunito", sans-serif;
+$font-display-me: "Red Hat Display", sans-serif;
+$font-display: "Josefin Sans", sans-serif;
+
+//UTILITIES
+.mg-top-sm {
+  margin-top: 1rem;
+}
+
+.mg-top-md {
+  margin-top: 2rem;
+}
+
+.mg-top-lg {
+  margin-top: 4rem;
+}
+
+.mg-top-hg {
+  margin-top: 8rem;
+}
+
+// BASE
+html {
+  font-size: 62.5%; // 1rem = 10px // 10 : 16 = 62.5%
+}
+
+.preload {
+  transition: none;
+}
+
+.container {
+  font-family: $font-primary;
+  line-height: 1.6;
+  color: $color-grey-dark-2;
+  display: grid;
+  grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
+  grid-template-columns:
+    [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr)
+    [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end])
+    [center-end] minmax(6rem, 1fr) [full-end];
+}
+
+.btn {
+  display: inline-block;
+  background-color: $color-primary;
+  color: #fff;
+  border: none;
+  border-radius: 0;
+  font-family: $font-display;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  padding: 1.8rem 3rem;
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+
+  &:hover {
+    background-color: $color-primary-dark;
+  }
+}
